@@ -1,0 +1,39 @@
+{
+  "name": "conventional-changelog-data",
+  "version": "5.0.13",
+  "description": "conventional-changelog data preset",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 30000",
+    "test-windows": "mocha --timeout 30000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conventional-changelog/conventional-changelog.git"
+  },
+  "keywords": [
+    "conventional-changelog",
+    "data",
+    "preset"
+  ],
+  "files": [
+    "conventional-changelog.js",
+    "conventional-recommended-bump.js",
+    "index.js",
+    "parser-opts.js",
+    "writer-opts.js",
+    "templates"
+  ],
+  "author": "Steve Mao",
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
+  },
+  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-data#readme",
+  "dependencies": {
+    "compare-func": "^2.0.0"
+  }
+}
