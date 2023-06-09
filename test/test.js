@@ -291,9 +291,9 @@ describe('data preset', function () {
       .pipe(through(function (chunk, enc, cb) {
         chunk = chunk.toString()
 
-        expect(chunk).to.include('(https://github.com/conventional-changelog/example/compare')
-        expect(chunk).to.include('](https://github.com/conventional-changelog/example/commit/')
-        expect(chunk).to.include('](https://github.com/conventional-changelog/example/issues/')
+        expect(chunk).to.include('(https://github.com/dskard/conventional-changelog-data/example/compare')
+        expect(chunk).to.include('](https://github.com/dskard/conventional-changelog-data/example/commit/')
+        expect(chunk).to.include('](https://github.com/dskard/conventional-changelog-data/example/issues/')
 
         i++
         cb()
@@ -344,10 +344,10 @@ describe('data preset', function () {
         chunk = chunk.toString()
 
         expect(chunk).to.include('(https://github.internal.example.com/dlmr')
-        expect(chunk).to.include('(https://github.internal.example.com/conventional-changelog/internal/compare')
-        expect(chunk).to.include('](https://github.internal.example.com/conventional-changelog/internal/commit/')
-        expect(chunk).to.include('5](https://github.internal.example.com/conventional-changelog/internal/issues/5')
-        expect(chunk).to.include(' closes [#10](https://github.internal.example.com/conventional-changelog/internal/issues/10)')
+        expect(chunk).to.include('(https://github.internal.example.com/dskard/conventional-changelog-data/internal/compare')
+        expect(chunk).to.include('](https://github.internal.example.com/dskard/conventional-changelog-data/internal/commit/')
+        expect(chunk).to.include('5](https://github.internal.example.com/dskard/conventional-changelog-data/internal/issues/5')
+        expect(chunk).to.include(' closes [#10](https://github.internal.example.com/dskard/conventional-changelog-data/internal/issues/10)')
 
         done()
       }))
