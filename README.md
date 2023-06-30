@@ -1,5 +1,3 @@
-# [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coverage-image]][coverage-url]
-
 > [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) data preset
 
 ## Data Convention
