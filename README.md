@@ -1,44 +1,81 @@
 # [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coverage-image]][coverage-url]
 
-> [conventional-changelog](https://github.com/ajoslin/conventional-changelog) [angular](https://github.com/angular/angular) preset
+> [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) data preset
 
-**Issues with the convention itself should be reported on the Angular issue tracker.**
-
-## Angular Convention
-
-Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
+## Data Convention
 
 ### Examples
 
-Appears under "Features" header, pencil subheader:
+1. Adding new rows to a data set
 
-```
-feat(pencil): add 'graphiteWidth' option
-```
+   ##### Result
+   Bump the minor version because we have changed the shape of the data set.
 
-Appears under "Bug Fixes" header, graphite subheader, with a link to issue #28:
+   ##### Commit message
+   ```
+   data(add-row): added new rows to the data set
+   ```
 
-```
-fix(graphite): stop graphite breaking when width < 0.1
+2. Adding new columns to a data set
 
-Closes #28
-```
+   ##### Result
+   Bump the minor version because we have changed the shape of the data set. Might want to combine this with `BREAKING_CHANGE` to signal an important new column was added. May be useful for surveys, where a new question was added after years of it previously not existing. Participant would now be getting version 2 of the survey.
 
-Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
+   ##### Commit message
+   ```
+   data(add-column): added new columns to the data set
+   ```
 
-```
-perf(pencil): remove graphiteWidth option
+3. Removing rows from a data set
 
-BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
-```
+   ##### Result
+   Bump the minor version because, although we have changed the shape of the data set, the number of columns stays the same and it should not impact (as much?) how data is read by a program.
 
-The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
+   ##### Commit message
+   ```
+   data(remove-row): remove rows from the data set
+   ```
 
-```
-revert: feat(pencil): add 'graphiteWidth' option
+4. Removing columns from a data set
 
-This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-```
+   ##### Result
+   Bump the major version because we have changed the shape of the data set in a way that could brake the way people previously read the data.
+
+   ##### Commit message
+   ```
+   data(remove-column): remove columns from the data set
+   ```
+
+5. Changing values in a previously published data set
+
+   ##### Result
+   Bump the patch version because we have made a change to values in the data set, but have not changed the shape of the data set in a way that could brake the way people previously read the data.
+
+   ##### Commit message
+   ```
+   data(change-values): changing the value in the data set, but not removing or adding new columns or rows
+   ```
+
+6. Replace whole data set (yearly update of data)
+
+   ##### Result
+   Bump the major version to signal that this is a whole new set of data, unrelated to previous versions of the data set.
+
+   ##### Commit message
+   ```
+   data(replace): changing the value in the data set, but not removing or adding new columns or rows
+   ```
+
+7. Fix a non-data related bug. Most other [Angular style presets](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular#readme) are supported.
+
+   ##### Result
+   Bump the patch version to signal that a bug has been fixed.
+
+   ##### Commit message
+   ```
+   fix: one less bug
+   ```
+
 
 ### Commit Message Format
 
@@ -92,13 +129,3 @@ reference GitHub issues that this commit **Closes**.
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 A detailed explanation can be found in this [document](#commit-message-format).
-
-[npm-image]: https://badge.fury.io/js/conventional-changelog-angular.svg
-[npm-url]: https://npmjs.org/package/conventional-changelog-angular
-[travis-image]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular.svg?branch=master
-[travis-url]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular
-[daviddm-image]: https://david-dm.org/conventional-changelog/conventional-changelog-angular.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/conventional-changelog/conventional-changelog-angular
-[coverage-image]: https://coveralls.io/repos/github/conventional-changelog/conventional-changelog/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/conventional-changelog/conventional-changelog?branch=master
-[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
