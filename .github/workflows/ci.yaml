@@ -17,7 +17,7 @@ jobs:
       - run: git config --global user.email 'dummy@example.org'
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -39,7 +39,7 @@ jobs:
       - run: git config --global user.email 'dummy@example.org'
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
       - uses: actions/setup-node@v3
         with:
           node-version: 14
