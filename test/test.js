@@ -137,7 +137,7 @@ describe('data preset', function () {
         expect(chunk).to.include('BREAKING CHANGE')
         expect(chunk).to.include('Data Added')
         expect(chunk).to.include('added new rows')
-        expect(chunk).to.include('Data Added\n\n* **add-row:**')
+        expect(chunk).to.match(/Data Added\r?\n\r?\n\* \*\*add-row:\*\*/)
 
         expect(chunk).to.not.include('ci')
         expect(chunk).to.not.include('feat')
@@ -531,10 +531,10 @@ describe('data preset', function () {
         chunk = chunk.toString()
 
         // check for changelog messages related to the data(add-row)
-        expect(chunk).to.match(/### Data Added\n\n\* \*\*add-row:\*\* added new rows to the data set/)
+        expect(chunk).to.match(/### Data Added\r?\n\r?\n\* \*\*add-row:\*\* added new rows to the data set/)
 
         // check for changelog messages related to the data(remove-row)
-        expect(chunk).to.match(/### Data Removed\n\n\* \*\*remove-row:\*\* remove rows from the data set/)
+        expect(chunk).to.match(/### Data Removed\r?\n\r?\n\* \*\*remove-row:\*\* remove rows from the data set/)
 
         done()
       }))
