@@ -78,5 +78,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm install
-          pnpm publish --access public
+          pnpm publish --no-git-checks --access public
 
