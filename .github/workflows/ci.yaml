@@ -69,8 +69,11 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm publish
+          cache: 'pnpm'
+      - name: publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          pnpm install
+          pnpm publish --access public
 
