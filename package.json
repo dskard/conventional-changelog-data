@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-data",
-  "version": "5.0.13",
+  "version": "0.0.1",
   "description": "conventional-changelog data preset",
   "main": "index.js",
   "scripts": {
