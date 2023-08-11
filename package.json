@@ -1,14 +1,14 @@
 {
   "name": "conventional-changelog-data",
-  "version": "5.0.13",
+  "version": "0.0.2",
   "description": "conventional-changelog data preset",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --cache --cache-location ./node_modules/.cache/ --ignore-path .gitignore",
     "fix": "eslint . --fix --cache --cache-location ./node_modules/.cache/ --ignore-path .gitignore",
     "pretest": "pnpm lint",
-    "test": "mocha --timeout 30000",
-    "test-windows": "mocha --timeout 30000"
+    "test": "c8 mocha --timeout 30000",
+    "test-windows": "c8 mocha --timeout 30000"
   },
   "repository": {
     "type": "git",
